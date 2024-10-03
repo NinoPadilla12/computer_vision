@@ -40,6 +40,10 @@ function draw() {
   textSize(8);
   textAlign(LEFT);
   text(confianza, 10, height - 4);
+
+  if (label == "MOUSE" && confianza >= 0.5) {
+    background(100, 100, 0);
+  }
 }
 
 // Get a prediction for the current video frame
