@@ -15,10 +15,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 260);
+  createCanvas(windowWidth, windowHeight);
   // Create the video
   video = createCapture(VIDEO);
-  video.size(320, 240);
+  video.size(windowWidth, windowHeight);
   video.hide();
 
   // flippedVideo = ml5.flipImage(video);
@@ -42,7 +42,21 @@ function draw() {
   text(confianza, 10, height - 4);
 
   if (label == "MOUSE" && confianza >= 0.5) {
-    background(100, 100, 0);
+    // Cambiar el fondo a un color específico
+    //background(100, 100, 200); // Fondo azul
+
+    // Crear un efecto de "zoom" en la pantalla
+    let scaleFactor = map(confianza, 0.5, 1, 1, 1.5);
+    scale(scaleFactor);
+
+    // Mostrar un mensaje divertido
+    textSize(32);
+    fill(255); // Color blanco para el texto
+    textAlign(CENTER, CENTER);
+    text("¡MOUSE Detectado!", width / 2, height / 2);
+
+    // Aplicar un filtro de color
+    filter(INVERT); // Invertir colores
   }
 }
 
