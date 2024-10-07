@@ -73,10 +73,10 @@ function draw() {
     rotate(rotateFactor);
 
     // Mostrar un mensaje divertido
-    textSize(32);
-    fill(0); // Color negro para el texto
+    textSize(75);
+    fill(20, 100, 0); // Color negro para el texto
     textAlign(CENTER, CENTER);
-    text("¡MIRAME!", width / 2, height / 2);
+    text("¡MIRAME!", width, height);
 
     // Aplicar varios filtros de color
     filter(THRESHOLD, 0.5); // Efecto de umbral, imagen en blanco y negro
@@ -90,7 +90,7 @@ function draw() {
     ellipse(width / 2, height / 2, 100 * confianza, 100 * confianza); // Círculo verde en el centro
 
     // Cambiar el "tint" de la pantalla
-    tint(random(200, 255), random(50), random(150)); // Tinte con tonos más suaves
+    //tint(random(200, 255), random(50), random(150)); // Tinte con tonos más suaves
   }
 }
 
